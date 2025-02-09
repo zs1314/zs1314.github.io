@@ -94,7 +94,7 @@
     <meta name="keywords" content="Diffusion Model, Skill Discovery, Trajectory Generation, Multitask Learning" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>
-      G3Flow: Generative 3D Semantic Flow for Pose-aware and Generalizable Object Manipulation
+      OCTAMamba: A State-Space Model Approach for Precision OCTA Vasculature Segmentation
     </title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -199,14 +199,14 @@
         </section> -->
         <section class="links">
           <ul>
-            <a href="https://arxiv.org/abs/2411.18369" rel="noreferrer" target="_blank">
+            <a href="https://arxiv.org/abs/2409.08000" rel="noreferrer" target="_blank">
               <li>
                 <span class="icon"> <img src="./public/paper.svg" /> </span
                 ><span>arXiv</span>
               </li>
             </a>
             <a
-              href="https://arxiv.org/pdf/2411.18369"
+              href="https://arxiv.org/pdf/2409.08000"
               rel="noreferrer"
               target="_blank"
             >
@@ -216,7 +216,7 @@
               </li>
             </a>
             <a
-              href="https://github.com/TianxingChen/G3Flow"
+              href="https://github.com/zs1314/OCTAMamba"
               rel="noreferrer"
               target="_blank"
             >
@@ -253,14 +253,34 @@
         <!-- <img src="./files/d-robotics.jpg" style="width: 10%"> -->
         <h2>Abstract</h2>
         <p class="abstract" style="font-family: 'Times New Roman', Arial; text-align: justify">
-          Recent advances in imitation learning for 3D robotic manipulation have shown promising results with diffusion-based policies. However, achieving human-level dexterity requires seamless integration of geometric precision and semantic understanding. We present G3Flow, a novel framework that constructs real-time semantic flow, a dynamic, object-centric 3D semantic representation by leveraging foundation models. Our approach uniquely combines 3D generative models for digital twin creation, vision foundation models for semantic feature extraction, and robust pose tracking for continuous semantic flow updates. This integration enables complete semantic understanding even under occlusions while eliminating manual annotation requirements. By incorporating semantic flow into diffusion policies, we demonstrate significant improvements in both terminal-constrained manipulation and cross-object generalization. Extensive experiments across five simulation tasks show that G3Flow consistently outperforms existing approaches, achieving up to 68.3% and 50.1% average success rates on terminal-constrained manipulation and cross-object generalization tasks respectively. Our results demonstrate the effectiveness of G3Flow in enhancing real-time dynamic semantic feature understanding for robotic manipulation policies.
+        Optical Coherence Tomography Angiography
+        (OCTA) is a crucial imaging technique for visualizing retinal
+        vasculature and diagnosing eye diseases such as diabetic
+        retinopathy and glaucoma. However, precise segmentation of
+        OCTA vasculature remains challenging due to the multi-scale
+        vessel structures and noise from poor image quality and eye
+        lesions. In this study, we proposed OCTAMamba, a novel
+        U-shaped network based on the Mamba architecture, designed
+        to segment vasculature in OCTA accurately. OCTAMamba
+        integrates a Quad Stream Efficient Mining Embedding Module
+        for local feature extraction, a Multi-Scale Dilated Asymmetric
+        Convolution Module to capture multi-scale vasculature, and
+        a Focused Feature Recalibration Module to filter noise and
+        highlight target areas. Our method achieves efficient global
+        modeling and local feature extraction while maintaining
+        linear complexity, making it suitable for low-computation
+        medical applications. Extensive experiments on the OCTA
+        3M, OCTA 6M, and ROSSA datasets demonstrated that
+        OCTAMamba outperforms state-of-the-art methods, providing
+        a new reference for efficient OCTA segmentation. Code is
+        available at https://github.com/zs1314/OCTAMamba
         </p>
       </section>
 
       <a class="anchor" id="pipeline"></a>
       <section class="details" style="text-align: justify;">
         <div style="display: flex; flex-direction: column; align-items: center; width: 100%; height: 100%;">
-          <h2>Pipeline of G3Flow</h2>
+          <h2>Pipeline of OCTAMamba</h2>
         </div>
         <div style="display: flex; margin: auto; width: 100%; height: auto; align-content: center; align-items: center;  justify-content: center;">
           <img
@@ -269,128 +289,36 @@
           />
         </div>
         <br />
-        <p style="font-family: 'Times New Roman',serif"> <strong>Pipeline of G3Flow.</strong> Our framework consists of (top) an initialization phase that generates comprehensive 3D representation (surface normals, wireframe, and geometry) through object-centric exploration and digital twin generation, which enables rich semantic field extraction, and (bottom) a control execution phase where real-time pose tracking maintains dynamic semantic fields to guide diffusion-based manipulation actions for pose-aware and generalizable manipulation.
-        </p>
+<!--        <p style="font-family: 'Times New Roman',serif"> <strong>Pipeline of OCTAMamba.</strong> Our framework consists of (top) an initialization phase that generates comprehensive 3D representation (surface normals, wireframe, and geometry) through object-centric exploration and digital twin generation, which enables rich semantic field extraction, and (bottom) a control execution phase where real-time pose tracking maintains dynamic semantic fields to guide diffusion-based manipulation actions for pose-aware and generalizable manipulation.-->
+<!--        </p>-->
         <!-- ----------------------------- -->
         <a class="anchor" id="tasks-a"></a>
 
         
         <a class="anchor" id="visualization"></a>
         <div style="display: flex; flex-direction: column; align-items: center; width: 100%; height: 100%;">
-          <h2>Visualization of G3Flow</h2>
+          <h2>Quantitative results</h2>
         </div>
         <div style="display: flex; margin: auto; width: 100%; height: auto; align-content: center; align-items: center;  justify-content: center;">
           <img
           style="width: 80%; height: auto"
-          src="files/vis_5Task.png"
+          src="files/compare1.png"
           />
         </div>
-        <p style="font-family: 'Times New Roman',serif">We present a video compilation demonstrating the four types of observations (G3Flow combined with the original point cloud, original RGB, G3Flow, and original point cloud) for the five tasks as follows:</p>
+        <p style="font-family: 'Times New Roman',serif">Performance comparison of different methods on three public datasets. The best results are highlighted in bold fonts. “ ↑ ”and “ ↓ ” indicate that larger or smaller is better.</p>
 
-
-        
-        <div class="grid-container">
-          <!-- 视频类型1 -->
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/bottle_adjust/G3Flow+raw_pcd.mp4" type="video/mp4">
-            error
-          </video>
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/shoe_place/G3Flow+raw_pcd.mp4" type="video/mp4">
-            error
-          </video>
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/dual_shoes_place/G3Flow+raw_pcd.mp4" type="video/mp4">
-            error
-          </video>
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/diverse_bottles_pick/G3Flow+raw_pcd.mp4" type="video/mp4">
-            error
-          </video>
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/tool_adjust/G3Flow+raw_pcd.mp4" type="video/mp4">
-            error
-          </video>
-          <!--  -->
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/bottle_adjust/rgb.mp4" type="video/mp4">
-            error
-          </video>
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/shoe_place/rgb.mp4" type="video/mp4">
-            error
-          </video>
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/dual_shoes_place/rgb.mp4" type="video/mp4">
-            error
-          </video>
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/diverse_bottles_pick/rgb.mp4" type="video/mp4">
-            error
-          </video>
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/tool_adjust/rgb.mp4" type="video/mp4">
-            error
-          </video>
-          <!--  -->
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/bottle_adjust/G3Flow.mp4" type="video/mp4">
-            error
-          </video>
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/shoe_place/G3Flow.mp4" type="video/mp4">
-            error
-          </video>
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/dual_shoes_place/G3Flow.mp4" type="video/mp4">
-            error
-          </video>
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/diverse_bottles_pick/G3Flow.mp4" type="video/mp4">
-            error
-          </video>
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/tool_adjust/G3Flow.mp4" type="video/mp4">
-            error
-          </video>
-          <!--  -->
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/bottle_adjust/raw_pcd.mp4" type="video/mp4">
-            error
-          </video>
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/shoe_place/raw_pcd.mp4" type="video/mp4">
-            error
-          </video>
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/dual_shoes_place/raw_pcd.mp4" type="video/mp4">
-            error
-          </video>
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/diverse_bottles_pick/raw_pcd.mp4" type="video/mp4">
-            error
-          </video>
-          <video autoplay loop muted width="100%" height="auto">
-            <source src="./video/tool_adjust/raw_pcd.mp4" type="video/mp4">
-            error
-          </video>
-        </div>
-        
-
-
-        
         <br><br>
       <a class="anchor" id="experiment" style="margin-top: -2em"></a>
       <section class="details" style="text-align: justify;">
         <div style="display: flex; flex-direction: column; align-items: center; width: 100%; height: 100%;">
-          <h2>Experiment</h2>
+          <h2>Qualitative visualization</h2>
         </div>
-        <p style="font-family: 'Times New Roman'"> We conduct extensive experiments to evaluate G3Flow's effectiveness in enhancing policy performance across two key aspects: terminal constraint satisfaction and cross-object generalization.</p>
+        <p style="font-family: 'Times New Roman'"> Qualitative visualization of different methods. Best viewed by zooming in the figures on high-resolution displays.</p>
         
         <div style="display: flex; margin: auto; width: 100%; height: auto; align-content: center; align-items: center;  justify-content: center;">
           <img
           style="width: 100%; height: auto"
-          src="files/main_experiment.png"
+          src="files/compare2.png"
           />
         </div>
         <br />
@@ -401,7 +329,7 @@
             <h2>Ablation Study</h2>
           </div>
 
-        <p>To explore the advantages of our complete, dynamic, object-level semantic flow representation, we conduct the ablation study with conventional scene-level feature clouds. We selected the <i>Shoe Place</i> and <i>Dual Shoes Place (T)</i> tasks for comparison because they require adjustments to the orientation of the shoe throughout the entire trajectory, which rely more on long-term semantic understanding. Additionally, object occlusions are designed into the tasks, posing a greater challenge for semantic comprehension.</p>
+        <p>To explore the impact of each component on model performance, we conducted ablation experiments on ROSSA 3M. From Table II, it is evident that QSEME, MSDAM, and FFRM all enhanced the model’s segmentation of the target area to varying degrees. The performance of OCATMamba was optimal when all three modules were used simultaneously.</p>
         <div style="display: flex; margin: auto; width: 100%; height: auto; align-content: center; align-items: center;  justify-content: center;">
           <img
           style="width: 100%; height: auto"
@@ -438,10 +366,10 @@
         </div>
         <pre>
       <code>
-@article{chen2024g3flow,
-  title={G3Flow: Generative 3D Semantic Flow for Pose-aware and Generalizable Object Manipulation},
-  author={Chen, Tianxing and Mu, Yao and Liang, Zhixuan and Chen, Zanxin and Peng, Shijia and Chen, Qiangyu and Xu, Mingkun and Hu, Ruizhen and Zhang, Hongyuan and Li, Xuelong and others},
-  journal={arXiv preprint arXiv:2411.18369},
+@article{zou2024octamamba,
+  title={OCTAMamba: A State-Space Model Approach for Precision OCTA Vasculature Segmentation},
+  author={Zou, Shun and Zhang, Zhuo and Gao, Guangwei},
+  journal={arXiv preprint arXiv:2409.08000},
   year={2024}
 }
       </code></pre>
@@ -771,12 +699,12 @@
     
         });
       </script>
-     <section class="acknowledgements">
-       <h2>Acknowledgements</h2>
-       <p style="font-family: 'Times New Roman', Arial;">
-        The authors extend their profound gratitude to <strong>D-robotics</strong> for their invaluable support in supplying the necessary cloud computing resources that facilitated the execution of this research. Furthermore, our sincere appreciation is extended to Deeoms for their contribution in providing essential model support, which was pivotal to the successful completion of this study.
-        </p> 
-      </section>
+<!--     <section class="acknowledgements">-->
+<!--       <h2>Acknowledgements</h2>-->
+<!--       <p style="font-family: 'Times New Roman', Arial;">-->
+<!--        The authors extend their profound gratitude to <strong>D-robotics</strong> for their invaluable support in supplying the necessary cloud computing resources that facilitated the execution of this research. Furthermore, our sincere appreciation is extended to Deeoms for their contribution in providing essential model support, which was pivotal to the successful completion of this study.-->
+<!--        </p> -->
+<!--      </section>-->
     </main>
   </body>
 </html>
