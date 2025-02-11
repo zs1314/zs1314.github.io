@@ -268,6 +268,90 @@
             
           </ul>
         </section>
+
+
+<style>
+  .slider-example-split-line {
+    --divider-width: 4px;
+    --divider-color: #ffa658;
+    --default-handle-opacity: 0;
+  }
+
+  .before,
+  .after { margin: 0; }
+
+  .before figcaption,
+  .after figcaption {
+    background: #fff;
+    border: 1px solid #c0c0c0;
+    border-radius: 12px;
+    color: #2e3452;
+    opacity: 0.8;
+    padding: 12px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 100%;
+  }
+
+  .before figcaption {left: 12px;}
+  .after figcaption { right: 12px;}
+
+  .image-sliders-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust the gap between sliders as needed */
+  }
+
+  .image-slider {
+    flex: 1;
+    min-width: 200px; /* Minimum width for each slider */
+  }
+
+  .image-slider img {
+    height: 300px; /* Set a fixed height for the images */
+    width: 100%;
+    object-fit: cover; /* Crop the images to fit the fixed height */
+  }
+</style>
+
+<div class="image-sliders-container">
+  <img-comparison-slider tabindex="0" class="slider-example-split-line image-slider" hover="hover">
+    <figure slot="first" class="after">
+      <img src="./files/1.png" alt="Ours">
+      <figcaption><strong>Ours</strong></figcaption>
+    </figure>
+    <figure slot="second" class="before">
+      <img src="./files/1_bef.png" alt="Before">
+      <figcaption><strong>Before</strong></figcaption>
+    </figure>
+  </img-comparison-slider>
+
+  <img-comparison-slider tabindex="0" class="slider-example-split-line image-slider" hover="hover">
+    <figure slot="first" class="after">
+      <img src="./files/73.png" alt="Ours">
+      <figcaption><strong>Ours</strong></figcaption>
+    </figure>
+    <figure slot="second" class="before">
+      <img src="./files/73_bef.png" alt="Before">
+      <figcaption><strong>Before</strong></figcaption>
+    </figure>
+  </img-comparison-slider>
+
+  <img-comparison-slider tabindex="0" class="slider-example-split-line image-slider" hover="hover">
+    <figure slot="first" class="after">
+      <img src="./files/74.png" alt="Ours">
+      <figcaption><strong>Ours</strong></figcaption>
+    </figure>
+    <figure slot="second" class="before">
+      <img src="./files/74_bef.png" alt="Before">
+      <figcaption><strong>Before</strong></figcaption>
+    </figure>
+  </img-comparison-slider>
+</div>
+
+
+
         <a class="anchor" id="abstract"></a>
         <!-- <img src="./files/d-robotics.jpg" style="width: 10%"> -->
         <h2>Abstract</h2>
@@ -405,7 +489,7 @@
           />
         </div>
 
-        <a class="anchor" id="Bibtex"></a>
+   <a class="anchor" id="Bibtex"></a>
 
       <section class="citation" style="text-align: justify;">
         <div style="display: flex; flex-direction: column; align-items: center; width: 100%; height: 100%;">
