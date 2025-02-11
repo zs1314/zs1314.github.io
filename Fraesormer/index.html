@@ -122,6 +122,8 @@
         ></a>
         <a class="barWrapper" clear href="#visualization" id="bar4"
         ><span>Visualization</span>
+          <div class="bar"></div
+        ></a>
         <a class="barWrapper" clear href="#Quantitative results" id="bar8"
           ><span>Quantitative results</span>
           <div class="bar"></div
@@ -382,27 +384,6 @@
           src="files/ablation.png"
           />
         </div>
-        <!-- <h3>Evaluation on Pose-Aware Manipulation Tasks</h3>
-        <p>To investigate the ability of our method to provide semantic information that enhances the policy's understanding of the semantics of the manipulated object parts, we selected <i>Shoe Place</i>, <i>Dual Shoes Place</i>, <i>Tool Adjust</i>, and <i>Bottle Adjust</i> as test tasks, requiring the robotic arm to meet pose-aware requirements. We chose objects that are geometrically similar to the training set for testing, to reduce the examination of the model's generalization ability. We chose unseen objects as the test set to avoid the situation that the policy memorizes training objects, which cheats the performance results.</p>
-    
-        <p><b>Ours</b> consistently outperforms baseline methods in achieving pose-aware requirements across all four tasks. Our method achieves over 25% higher success rates in the <i>Shoe Place (T)</i> task for correct orientation and in the <i>Bottle Adjust (T)</i> task, we achieved a success rate that exceeded the average of the baselines by over 38% for upright pick. This demonstrates that the semantic understanding provided by <b>ours</b> helps the policy better comprehend and execute pose-aware requirements.</p>
-    
-        <p>The performance gain is particularly notable in tasks requiring precise object orientation, such as <i>Dual Shoes Place (T)</i>. While baseline methods occasionally achieve correct positioning, they struggle with maintaining consistent orientation accuracy. <b>Ours</b> nearly doubles the success rate compared to the strongest baseline, suggesting that our semantic representations effectively encode spatial relationships and object orientations.</p>
-    
-        <h3>Evaluation on Generalization Performance</h3>
-        <p>To investigate the generalization capability of our method in providing semantic information for manipulating objects, we have selected <i>Shoe Place</i>, <i>Dual Shoes Place</i>, <i>Tool Adjust</i>, and <i>Diverse Bottles Pick</i> as test tasks. Unlike tasks that require the satisfaction of terminal constraints, we choose as few and similar visible objects as possible for the training set and select objects that are as geometrically distinct as possible from the training set for the test set, as shown in Figure~<i>task_for_generalization</i>. This requires the policy to correctly manipulate objects that are geometrically different from those it has seen with only a limited exposure, focusing on assessing the policy's generalization ability.</p>
-    
-        <p>Our method achieves an average success rate across the four tasks that are 18.4% higher than that of the strongest baseline algorithm, exhibiting strong generalization capabilities across different object categories and variations, as shown in Table~<i>generalization</i>:</p>
-    
-        <ul class="itemize">
-            <li><strong>Intra-class Generalization</strong>: In tasks involving geometrically distinct unseen instances of the same object category (<i>Shoe Place (G)</i>, <i>Dual Shoes Place (G)</i>, <i>Diverse Bottles Pick (G)</i>), our method maintains optimal performance, indicating that <b>ours</b> encompasses a genuine semantic understanding of objects, enabling effective operation generalization even when faced with geometrically diverse instances within the same category.</li>
-            <li><strong>Cross-category Generalization</strong>: For the <i>Tool Adjust (G)</i> task, which necessitates dealing with objects that are semantically similar but belong to different categories, our method must learn to grasp positions akin to a handle on the objects while also fulfilling the pick-upright condition. <b>Ours</b> achieved a success rate of <strong>70.7%</strong> on previously unseen tool categories, which is <strong>13.4%</strong> higher than the best baseline. This result confirms the capability of our method to transfer learned operational skills across different object categories.</li>
-            <li><strong>Scale Variation</strong>: In the <i>Diverse Bottles Pick (G)</i> task, <b>ours</b> successfully generalizes to bottles of varying sizes, maintaining a consistent grasp success rate of <strong>51.3%</strong> across size variations. This indicates robust handling of geometric variations while preserving semantic understanding.</li>
-        </ul> -->
-        
-        
-        <!-- ----------------------------- -->
-        
 
         <a class="anchor" id="Bibtex"></a>
 
